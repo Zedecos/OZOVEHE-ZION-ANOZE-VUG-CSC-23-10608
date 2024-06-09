@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script scr="script.js"> </script>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color:green;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.user-actions a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+
+.hero {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.hero img {
+    width: 20%;
+    height: auto;
+    padding-left: 120px;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.hero-text h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.hero-text p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.shop {
+    background-color: rgba(0, 128, 0, 0.61);
+    color: #fff;
+    border: none;
+    margin-left: 30%;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 120px;
+    height: 35px;
+}
+
+.hero-text button:hover {
+    background-color: #004d00;
+}
+
+.categories, .new-arrivals, .newsletter {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.categories h3, .new-arrivals h3, .newsletter h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.category-list, .product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.category, .product {
+    text-align: center;
+    margin: 10px;
+}
+
+.category img, .product img {
+    width: 100px;
+    height: auto;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+.product span {
+    color: red;
+}
+
+.newsletter form {
+    text-align: center;
+}
+
+.newsletter input {
+    padding: 10px;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.newsletter button:hover {
+    background-color: #004d00;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}.zion{
+    display: flex;
+    flex-direction: column;
+    margin-left: 13%;
+    margin-top: 5%;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">DIVER</div>
+    <div class="header">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <a href="file:///C:/Users/HP/Desktop/VS%20CODE%20ASSIGNMENT/Wireframe%202.html"><li>Add To Cart</li></a>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav> 
+    </div>
+        <div class="user-actions">
+            <a href="#">Login / Register</a>
+            <a href="#">Your Cart</a>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="zion"><h2>Introducing the New HP Laptop Series</h2>
+                <p>Unmatched Performance in a sleek design!</p>
+                <button class="shop">Shop Now</button></div>
+                <img src="hp display.jfif" alt="HP Laptop Series";>
+        </section>
+        <section class="categories">
+            <h3>Popular Categories</h3>
+            <div class="category-list">
+                <div class="category">
+                    <img src="Laptop.jfif" alt="Laptops">
+                    <p>Laptops</p>
+                </div>
+                <div class="category">
+                    <img src="Smart Phone.jfif" alt="Smartphones">
+                    <p>Smartphones</p>
+                </div>
+                <div class="category">
+                    <img src="Cmera.jfif" alt="Cameras">
+                    <p>Cameras</p>
+                </div>
+                <div class="category">
+                    <img src="HeadPhone.jfif" alt="Headphones">
+                    <p>Headphones</p>
+                </div>
+                <div class="category">
+                    <img src="Tablet.jfif" alt="Tablets">
+                    <p>Tablets</p>
+                </div>
+                <div class="category">
+                    <img src="Smart watch.jfif" alt="Smartwatches">
+                    <p>Smartwatches</p>
+                </div>
+            </div>
+        </section>
+        <section class="new-arrivals">  
+            <h3>New Arrivals</h3>
+            <div class="product-list">
+                <div class="product">
+                    <img src="Mouse.jfif" alt="Wireless Mouse">
+                    <p>Wireless Bluetooth Mouse</p>
+                    <p>$25 <span>(20% off)</span></p>
+                </div>
+                <div class="product">
+                    <img src="Dell inspiration 15.jfif" alt="Mechanical Keyboard">
+                    <p>Mechanical Keyboard</p>
+                    <p>$50</p>
+                </div>
+                <div class="product">
+                    <img src="Cosair Void Wireless.jfif"Wireless Earbuds">
+                    <p>Comfo Buds Wireless Earbuds</p>
+                    <p>$40</p>
+                </div>
+                <div class="product">
+                    <img src="Wireless Lavalier.jfif" alt="Wireless Speaker">
+                    <p>Wireless Speaker</p>
+                    <p>$30</p>
+                </div>
+                <div class="product">
+                    <img src="HeadPhone.jfif" alt="Headphones">
+                    <p>Wireless Oraimo Headphones</p>
+                    <p>$50</p>
+                </div>
+            </div>
+        </section>
+        <section class="newsletter">
+            <h3>Subscribe to Our Newsletter</h3>
+            <form>
+                <input type="email" placeholder="Your Email Address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 DIVER. All rights reserved.</p>
+    </footer>
+</body>
+</html>
