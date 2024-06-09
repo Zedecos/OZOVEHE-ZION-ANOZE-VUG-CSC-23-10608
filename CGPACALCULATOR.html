@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+</head>
+<body>
+    <h2>CGPA Calculator</h2>
+    <form>
+        <label for="credit">Credit Hours:</label>
+        <input type="number" id="credit" name="credit" min="1" step="any" required><br><br>
+        
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" name="grade" required><br><br>
+        
+        <button type="button" onclick="calculateCGPA()">Add Course</button><br><br>
+
+        <div id="courses"></div><br>
+
+        <label for="cgpa">CGPA:</label>
+        <input type="text" id="cgpa" name="cgpa" readonly><br><br>
+        
+        <button type="button" onclick="resetForm()">Reset</button>
+    </form>
+
+    <script>
+        function calculateCGPA() {
+            var credit = parseFloat(document.getElementById('credit').value);
+            var grade = document.getElementById('grade').value.toUpperCase();
+            var coursesDiv = document.getElementById('courses');
+            var cgpaInput = document.getElementById('cgpa');
+            
+            if (isNaN(credit) || !grade.match(/^[A-F][+-]?$/)) {
+                alert('Please enter valid values for credit hours and grade (e.g., A+, B-, etc.).');
+                return;
+            }
+            
+            var courseRow = document.createElement('div');
+            courseRow.textContent = 'Credit Hours: ' + credit + ', Grade: ' + grade;
+            coursesDiv.appendChild(courseRow);
+            
+            var totalCredit = 0;
+            var totalGradePoints = 0;
+
+            coursesDiv.childNodes.forEach(function(course) {
+                var creditRegex = /\d+(\.\d+)?/;
+                var gradeRegex = /[A-F][+-]?/;
+                var creditMatch = creditRegex.exec(course.textContent);
+                var gradeMatch = gradeRegex.exec(course.textContent);
+                if (creditMatch && gradeMatch) {
+                    totalCredit += parseFloat(creditMatch[0]);
+                    totalGradePoints += convertGradeToPoint(gradeMatch[0]) * parseFloat(creditMatch[0]);
+                }
+            });
+        
+        function convertGradeToPoint(grade) {
+            switch (grade) {
+                case 'A+':
+                    return 4.00;
+                case 'A':
+                    return 4.00;
+                case 'A-':
+                    return 3.67;
+                case 'B+':
+                    return 3.33;
+                case 'B':
+                    return 3.00;
+                case 'B-':
+                    return 2.67;
+                case 'C+':
+                    return 2.33;
+                case 'C':
+                    return 2.00;
+                case 'C-':
+                    return 1.67;
+                case 'D+':
+                    return 1.33;
+                case 'D':
+                    return 1.00;
+                case 'F':
+                    return 0.00;
+                default:
+                    return NaN;
+            }
+        }
+        
+        function resetForm() {
+            document.getElementById('credit').value = '';
+            document.getElementById('grade').value = '';
+            document.getElementById('courses').innerHTML = '';
+            document.getElementById('cgpa').value = '';
+        }
+    </script>
+</body>
+</html>
