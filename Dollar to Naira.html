@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .converter {
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="converter">
+    <h2>Currency Converter</h2>
+    <label for="usdInput">Enter amount in US Dollars ($):</label>
+    <input type="number" id="usdInput">
+    <button onclick="convert()">Convert</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    function convert() {
+        var usdAmount = document.getElementById("usdInput").value;
+        var exchangeRate = 1473.46; // Change this value to the current exchange rate
+        var nairaAmount = usdAmount * exchangeRate;
+        document.getElementById("result").innerHTML = usdAmount + " USD = " + nairaAmount.toFixed(2) + " NGN";
+        alert(usdAmount + " USD = " + nairaAmount.toFixed(2) + " NGN");
+    }
+</script>
+
+</body>
+</html>
