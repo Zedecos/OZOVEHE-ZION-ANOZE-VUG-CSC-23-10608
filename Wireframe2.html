@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<head>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart</title>
+<style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color:green;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.user-actions a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.hero-text h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.hero-text p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.hero-text button {
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero-text button:hover {
+    background-color: #004d00;
+}
+  .cart-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .cart-header {
+    background-color: #90ee90;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+  }
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .cart-table th, .cart-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .cart-table th {
+    background-color: #f2f2f2;
+  }
+  .cart-footer {
+    text-align: right;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  .cart-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .cart-button:hover {
+    background-color: #45a049;
+  }
+  body {
+    font-family: Arial, sans-serif;
+}
+
+.cart-totals {
+    width: 400px;
+    padding: 20px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 35%;
+    margin-top: 2%;
+}
+
+.cart-size, .cart-price, .shipping, .total-cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.shipping {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.total-cost {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.total {
+    font-size: 24px;
+    font-weight: bold;
+}
+</style>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Totals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">DIVER</div>
+<div class="header">
+    <nav>
+        <ul>
+          <a href="file:///C:/Users/HP/Desktop/VS%20CODE%20ASSIGNMENT/Wireframe.html"><li>Home</li></a>
+            <li><a href="#">Add To Cart</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+    <div class="user-actions">
+        <a href="#">Login / Register</a>
+        <a href="#">Your Cart</a>
+    </div>
+</header>
+<div class="cart-container">
+  <div class="cart-header">
+    Your Shopping Cart
+  </div>
+  
+  <table class="cart-table">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+    <!-- Repeat this part for each product -->
+    <tr>
+      <td><img src="Smart watch.jfif" alt="Product 1"> Smart Watch</td>
+      <td>$250</td>
+      <td>2</td>
+      <td>$500</td>
+    </tr>
+    <!-- End of repeated part -->
+    <tr>
+        <td><img src="Laptop.jfif" alt="Product 1"> Dell Inspioration 12</td>
+        <td>$4,500</td>
+        <td>1</td>
+        <td>$4,500</td>
+      </tr>
+      <!-- End of repeated part -->
+      <tr>
+        <td><img src="HeadPhone.jfif" alt="Product 1"> Oraimo Headphone</td>
+        <td>$450</td>
+        <td>3</td>
+        <td>$1,350</td>
+      </tr>
+      <!-- End of repeated part -->
+      <tr>
+  </table>
+  
+  <div class="cart-footer">
+    <strong>Cart Total: $7,500</strong>
+  </div>
+  
+  <button class="cart-button">UPDATE CART</button>
+  <button class="cart-button">PROCEED TO CHECKOUT</button>
+</div>
+<div class="cart-totals">
+  <div class="cart-size">
+      <span class="label">Cart Size -</span>
+      <span class="value">Large</span>
+  </div>
+  <div class="cart-price">
+      <span class="price">$6,350</span>
+  </div>
+  <div class="shipping">
+      <div class="label">Shipping and Handling</div>
+      <div class="option">
+          <input type="radio" id="localShipping" name="shipping" checked>
+          <label for="localShipping">Local Shipping</label>
+      </div>
+      <div class="option">
+          <input type="radio" id="localPickup" name="shipping">
+          <label for="localPickup">Local Pickup</label>
+      </div>
+      <div class="option">
+          <input type="radio" id="refund" name="shipping">
+          <label for="refund">Refund Unsatisfied</label>
+      </div>
+  </div>
+  <div class="total-cost">
+      <span>Over Total and Shipping cost</span>
+      <span class="total">$7,500</span>
+  </div>
+</div>
+</body>
+</html>
